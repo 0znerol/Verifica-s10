@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import CityList from "./CityList";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const MainSearch = () => {
   let data = localStorage.getItem("joblist");
   const [city, setCity] = useState("");
@@ -13,16 +14,18 @@ const MainSearch = () => {
     console.log(city);
   };
 
+  // ...
+
   const handleSubmit = async (e) => {
     console.log(city);
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=20&appid=f5781462f66db4c92f31a25beda728aa`
+      const response = await axios.get(
+        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=20&appid=cae0c2922ae620d85c689663a408be7d&lang=it`
       );
-      if (response.ok) {
-        const data = await response.json();
+      if (response.status === 200) {
+        const data = response.data;
         console.log(data);
         setCityRes(data);
       } else {
@@ -37,13 +40,7 @@ const MainSearch = () => {
     <Container>
       <Row>
         <Col xs={10} className="mx-auto my-3">
-          <h1 className="display-1">Remote Jobs Search</h1>
-          <button
-            className="btn btn-primary"
-            onClick={() => navigate("/favorites/")}
-          >
-            favorites
-          </button>
+          <h1 className="display-1">Cerca una citta</h1>
         </Col>
         <Col xs={10} className="mx-auto">
           <Form onSubmit={handleSubmit}>
