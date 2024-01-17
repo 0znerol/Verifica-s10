@@ -54,7 +54,7 @@ const MainSearch = () => {
         </Col>
         <Col xs={10} className="mx-auto mb-5">
           {cityRes.length > 0 && (
-            <table className="table">
+            <table className="card_bg table">
               <thead>
                 <tr>
                   <th>City</th>

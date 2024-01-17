@@ -46,3 +46,17 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.table {
+  background-color: black !important;
+}
+th {
+  background-color: #1c1f4b2d !important;
+  color: black;
+}
+td {
+  background-color: #1c1f4b2d !important;
+  color: black;
+}
+a {
+  color: black !important;
+}
