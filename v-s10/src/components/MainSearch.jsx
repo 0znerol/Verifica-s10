@@ -14,8 +14,6 @@ const MainSearch = () => {
     console.log(city);
   };
 
-  // ...
-
   const handleSubmit = async (e) => {
     console.log(city);
     e.preventDefault();
@@ -57,15 +55,20 @@ const MainSearch = () => {
             <table className="card_bg table text-center">
               <thead>
                 <tr>
-                  <th className="w-25">City</th>
-                  <th className="w-25">Country</th>
-                  <th className="w-25">State</th>
+                  <th key={1} className="w-25">
+                    City
+                  </th>
+                  <th key={2} className="w-25">
+                    Country
+                  </th>
+                  <th key={3} className="w-25">
+                    State
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                {" "}
-                {cityRes.map((cityData) => (
-                  <CityList data={cityData} />
+                {cityRes.map((cityData, index) => (
+                  <CityList key={index} data={cityData} />
                 ))}
               </tbody>
             </table>
