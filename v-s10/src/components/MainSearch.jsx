@@ -54,12 +54,12 @@ const MainSearch = () => {
         </Col>
         <Col xs={10} className="mx-auto mb-5">
           {cityRes.length > 0 && (
-            <table className="card_bg table">
+            <table className="card_bg table text-center">
               <thead>
                 <tr>
-                  <th>City</th>
-                  <th>Country</th>
-                  <th>State</th>
+                  <th className="w-25">City</th>
+                  <th className="w-25">Country</th>
+                  <th className="w-25">State</th>
                 </tr>
               </thead>
               <tbody>
